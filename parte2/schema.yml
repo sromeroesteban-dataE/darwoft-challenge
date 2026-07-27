@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: source('raw', 'accounts')
+                field: account_id
+
+      - name: status
+        # Test genérico elegido: accepted_values. Justificación: funciona como
+        # alarma automática si el filtro de exclusión de 'failed' del modelo
+        # dejara de aplicarse, o si apareciera un status nuevo no contemplado
+        # en el sistema origen (ej. 'cancelled').
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'pending']
+
+  - name: mart_user_activity
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
+      - name: mes
+        tests:
+          - not_null
