@@ -2,7 +2,7 @@
 
 El análisis completo fue desarrollado en **Tableau Public**, como dashboard interactivo.
 
-**Dashboard:** https://public.tableau.com/views/darwoft/Dashboard1?...
+**Dashboard:** [https://public.tableau.com/views/darwoft/Dashboard1?:language=esES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)](https://public.tableau.com/app/profile/sergio.romero4717/viz/darwoft/Dashboard1)
 
 ## Contenido del dashboard
 
